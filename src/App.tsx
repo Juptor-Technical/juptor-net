@@ -1,11 +1,8 @@
 import { useEffect, useState } from "react";
 import Navbar from "./components/NavBar";
-import Hero from "./components/Hero";
-import CoreSegments from "./components/CoreSegments";
-import WhyChooseJuptor from "./components/WhyChooseJuptor";
 import Footer from "./components/Footer";
-import AboutUs from "./components/about/about";
-import ContactUs from "./components/contact/contact";
+import Fibernetics from "./components/juptor_networks/fibernetics/Fibernetics";
+import JuptorNetworks from "./components/juptor_networks/landing";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -40,8 +37,10 @@ function App() {
       {/* <Hero />
       <CoreSegments />
       <WhyChooseJuptor /> */}
-      <AboutUs />
+      {/* <AboutUs /> */}
       {/* <ContactUs /> */}
+      <JuptorNetworks />
+      {/* <Fibernetics /> */}
       <Footer />
       {/* We'll add more sections here as we build them */}
     </div>
