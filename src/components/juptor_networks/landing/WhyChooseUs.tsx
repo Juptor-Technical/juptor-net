@@ -1,10 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Wifi, Clock, DollarSign, Infinity } from "lucide-react";
-import type { Service } from "../types";
 
 const WhyChooseUs: React.FC = () => {
-  const features: Service[] = [
+  const features = [
     {
       icon: <Wifi className="w-6 h-6" />,
       title: "Reliable and superfast",

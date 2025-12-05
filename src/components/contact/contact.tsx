@@ -29,21 +29,14 @@ const ContactUs: React.FC = () => {
     }));
   };
 
-  const fadeInUp = {
-    initial: { opacity: 0, y: 40 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6, ease: "easeOut" },
-  };
-
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
       {/* Hero Section */}
-      <section className="relative py-12 lg:py-20 bg-gradient-to-br from-blue-900 via-purple-900 to-blue-800 text-white overflow-hidden">
+      <section className="relative py-12 lg:py-20 bg-linear-to-br from-blue-900 via-purple-900 to-blue-800 text-white overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage:
-              'url("https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80")',
+            backgroundImage: 'url("/pics/IMG_4122.JPG")',
           }}
         >
           <div className="absolute inset-0 bg-blue-900/80 mix-blend-multiply"></div>
@@ -58,7 +51,7 @@ const ContactUs: React.FC = () => {
           >
             <h1 className="text-3xl lg:text-5xl font-bold mb-4">
               Contact{" "}
-              <span className="bg-gradient-to-r from-blue-200 to-purple-200 bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-blue-200 to-purple-200 bg-clip-text text-transparent">
                 Us
               </span>
             </h1>
@@ -292,7 +285,7 @@ const ContactUs: React.FC = () => {
               </div>
 
               {/* Quick Support */}
-              <div className="bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl p-6 text-white">
+              <div className="bg-linear-to-br from-blue-600 to-purple-600 rounded-xl p-6 text-white">
                 <h3 className="text-xl font-bold mb-3">Need Immediate Help?</h3>
                 <p className="text-blue-100 mb-4 text-sm">
                   For urgent technical support or immediate assistance, call our

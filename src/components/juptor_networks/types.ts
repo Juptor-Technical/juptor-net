@@ -2,6 +2,8 @@ export interface Service {
   icon: React.ReactNode;
   title: string;
   description: string;
+  link: string;
+  features: string[];
 }
 
 export interface UseCase {

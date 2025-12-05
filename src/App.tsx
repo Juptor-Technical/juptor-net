@@ -1,17 +1,18 @@
 import { useEffect, useState } from "react";
-import Navbar from "./components/NavBar";
-import Footer from "./components/Footer";
-import Fibernetics from "./components/juptor_networks/fibernetics/Fibernetics";
+import Navbar from "./shared/NavBar";
+import Footer from "./shared/Footer";
+import { BrowserRouter as Router, Routes, Route } from "react-router";
+import HomePage from "./components/home/home";
+import AboutUs from "./components/about/about";
+import ContactUs from "./components/contact/contact";
 import JuptorNetworks from "./components/juptor_networks/landing";
+import NetworkSubpage from "./components/juptor_networks/NetworkSubpage";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
-    // Check system preference or saved theme
-    const isDark =
-      localStorage.getItem("darkMode") === "true" ||
-      window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const isDark = localStorage.getItem("darkMode") === "true";
     setDarkMode(isDark);
 
     if (isDark) {
@@ -32,18 +33,31 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
-      <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-      {/* <Hero />
+    <Router>
+      <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
+        <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutUs />} />
+          <Route path="/contact" element={<ContactUs />} />
+          <Route path="/networks" element={<JuptorNetworks />} />
+          <Route path="/networks/:id" element={<NetworkSubpage />} />
+          <Route path="*" element={<HomePage />} />
+          {/* <Hero />
       <CoreSegments />
       <WhyChooseJuptor /> */}
-      {/* <AboutUs /> */}
-      {/* <ContactUs /> */}
-      <JuptorNetworks />
-      {/* <Fibernetics /> */}
-      <Footer />
-      {/* We'll add more sections here as we build them */}
-    </div>
+          {/* <AboutUs /> */}
+          {/* <ContactUs /> */}
+          {/* <JuptorNetworks /> */}
+          {/* <Surveillance /> */}
+          {/* <Fibernetics /> */}
+          {/* <Equipment /> */}
+
+          {/* We'll add more sections here as we build them */}
+        </Routes>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
